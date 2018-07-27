@@ -1,13 +1,10 @@
-# vue-json-pretty
+# vue-json-pretty-fast
 
 [![Build Status](https://travis-ci.org/leezng/vue-json-pretty.svg?branch=master)](https://travis-ci.org/leezng/vue-json-pretty)
 [![npm package](https://img.shields.io/npm/v/vue-json-pretty.svg)](https://www.npmjs.org/package/vue-json-pretty)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/leezng/vue-json-pretty/blob/master/LICENSE)
 
 A vue 2.x component for rendering JSON data as a tree structure.
-
-- basic: JSON pretty
-- advanced: get item data from JSON
 
 ## Links
 
@@ -18,7 +15,7 @@ A vue 2.x component for rendering JSON data as a tree structure.
 ## Install
 
 ```js
-npm install vue-json-pretty
+npm install vue-json-pretty-fast
 ```
 
 ## Usage
