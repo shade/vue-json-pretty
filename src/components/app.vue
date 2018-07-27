@@ -14,21 +14,18 @@
     </template>
 
     <template v-if="Array.isArray(data) || isObject(data)">
-      <!-- 左闭合 -->
       <brackets-left
         :visiable.sync="visiable"
         :data="data"
         :not-last-key="notLastKey">
         <span v-if="currentDeep > 1 && !Array.isArray(parentData)">{{ currentKey }}:</span>
       </brackets-left>
-
-      <!-- 数据内容, data 为对象时, key 表示键名, 为数组时表示索引 -->
       <div
         v-for="(item, key) in data"
-        v-show="visiable"
+        v-if="visiable"
         class="vjs__tree__content"
         :key="key">
-        <vue-json-pretty
+        <vue-json-pretty-fast
           :parent-data="data"
           :data="item"
           :deep="deep"
@@ -39,17 +36,14 @@
           :current-key="key"
           :current-deep="currentDeep + 1"
           @click="handleItemClick">
-        </vue-json-pretty>
+        </vue-json-pretty-fast>
       </div>
-
-      <!-- 右闭合 -->
       <brackets-right
         :visiable.sync="visiable"
         :data="data"
         :not-last-key="notLastKey">
       </brackets-right>
     </template>
-
     <simple-text
       v-else
       :parentDataType="getDataType(parentData)"
@@ -68,7 +62,7 @@
   import BracketsRight from './brackets-right'
 
   export default {
-    name: 'vue-json-pretty',
+    name: 'vue-json-pretty-fast',
     components: {
       SimpleText,
       Checkbox,
